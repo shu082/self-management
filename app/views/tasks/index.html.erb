@@ -1,0 +1,48 @@
+<header　class="top-header">
+  <h1><a href="#"><img class="logo" src="#" alt="セルフマネジメント"></a></h1>
+</header>
+<nav>
+  <ul class="top-nav">
+    <li><%= link_to "#" %></li>
+    <li><%= link_to "#" %></li>
+  </ul>
+</nav>
+
+<div class="top-content">
+  <h2 class="page-title">継続は力なり</h2>
+  <p>自由になりたけれ学習を続けるべし</p>
+
+<%# 目標 %>
+  <div class="target">
+    <h2>目標</h2>
+  </div>
+
+<%# 活動記録 %>
+  <div class="tasks">
+    <h2>活動記録</h2>
+    <% @tasks.each do |t| %>
+      <li class="list">
+        <%= link_to "#" do %>
+        <div class="task-date">
+          <%= t.today %>
+        </div>
+        <% end %>
+        <div class="daiary">
+          <h2>今日したこと</h2>
+          <%= t.daiary %>
+        </div>
+        <div class="next_task">
+          <h2>明日すること</h2>
+          <%= t.next_task %>
+        </div>
+      </li>
+    <% end %>
+  </div>
+
+  <a class="button" href="#">追加する</a>
+</div>
+
+<footer class="top-footer">
+  <h1><a href="#"><img class="logo" src="#" alt="セルフマネジメント"></a></h1>
+</footer>
+
